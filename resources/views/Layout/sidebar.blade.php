@@ -123,43 +123,43 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/UI/buttons.html" class="nav-link">
+                        <a href="{{route('department.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Main Department</p>
+                            <p>Show Main Department</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/UI/sliders.html" class="nav-link">
+                        <a href="{{route('subdept.index')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Sub Department</p>
+                            <p>Show Sub Department</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('user')}}" class="nav-link">
+                        <a href="{{ route('user') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>User Registration</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('doctor')}}" class="nav-link">
+                        <a href="{{ route('doctor') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Create Doctor Reference</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('center')}}" class="nav-link">
+                        <a href="{{ route('center') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Create Center Reference</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/UI/ribbons.html" class="nav-link">
+                        <a href="{{ route('department.create') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Add Department</p>
+                            <p>Add Main Department</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/UI/ribbons.html" class="nav-link">
+                        <a href="{{route('subdept.create')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Add Sub Department</p>
                         </a>
