@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use App\Models\SubDepartment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -13,7 +14,9 @@ class SubDepartmentController extends Controller
      */
     public function index()
     {
-        return view('subdept.view_sub_dept');
+       $data=SubDepartment::with('dept')->get();
+    //    return $data;
+        return view('subdept.view_sub_dept', compact('data'));
     }
 
     /**
@@ -21,8 +24,8 @@ class SubDepartmentController extends Controller
      */
     public function create()
     {
-        $dept=DB::table('departments')->get();
-        return view('subdept.add_sub_deptment',compact('dept'));
+        $dept = DB::table('departments')->get();
+        return view('subdept.add_sub_deptment', compact('dept'));
     }
 
     /**
@@ -30,20 +33,16 @@ class SubDepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        $data=$request->validate([
-            'sub_deptname'=>'required',
-            'dept_id'=>'required'
+        $data = $request->validate([
+            'sub_deptname' => 'required',
+            'dept_id' => 'required'
         ]);
-        $subdept=new SubDepartment();
-        $subdept->dept_id=$request->dept_id;
-        $subdept->sub_deptname=$request->sub_deptname;
+        $subdept = new SubDepartment();
+        $subdept->dept_id = $request->dept_id;
+        $subdept->sub_deptname = $request->sub_deptname;
         $subdept->save();
 
-        return redirect()->route('subdept.index')->with('status',"SubDepartments Data Store Successfull..");
-
-       
-
-
+        return redirect()->route('subdept.index')->with('status', "SubDepartments Data Store Successfull..");
     }
 
     /**

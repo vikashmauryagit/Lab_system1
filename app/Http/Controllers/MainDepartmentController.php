@@ -54,7 +54,7 @@ class MainDepartmentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
     }
 
     /**
@@ -62,7 +62,9 @@ class MainDepartmentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        return $request;
+        $data=Department::find($id);
+        
     }
 
     /**

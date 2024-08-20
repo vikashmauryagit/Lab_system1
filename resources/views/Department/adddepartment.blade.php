@@ -20,7 +20,7 @@
         </div>
         <div class="mt-2">
             <button type="submit" class="btn btn-primary">Add Main Department</button>
-            <button type="submit" class="btn btn-danger">View Department</button>
+            <a href="{{route('department.index')}}" class="btn btn-danger">View Main DepartMent<a>
         </div>
     </form>
 @endsection
