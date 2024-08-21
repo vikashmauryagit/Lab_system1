@@ -62,7 +62,7 @@ class MainDepartmentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        return $request;
+       
         $data=Department::find($id);
         
     }

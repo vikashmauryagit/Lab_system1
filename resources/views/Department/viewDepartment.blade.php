@@ -39,13 +39,11 @@
                                 <td>{{ $dd->id }}</td>
                                 <td>{{ $dd->dept_name }}</td>
                                 <td>
-                                    {{-- <button class="btn btn-primary p-2" data-toggle="modal" data-target="#exampleModal"
-                                        deta-param_id="{{ $dd->id }}" deta-param-depart={{ $dd->dept_name }}><i
-                                            class="fa-solid fa-pen-to-square"></i>
-                                    </button> --}}
-                                    <button class="btn btn-primary p-2" data-toggle="modal" data-target="#exampleModal"><i
-                                            class="fa-solid fa-pen-to-square"></i>
+                                    <button class="btn btn-primary p-2" type="button" data-toggle="modal"
+                                        data-target="#exampleModal" deta-param-id="{{ $dd->id }}"
+                                        deta-param-depart={{ $dd->dept_name }}><i class="fa-solid fa-pen-to-square"></i>
                                     </button>
+
                                     <a href="" class="btn btn-danger p-2"><i class="fa-solid fa-trash"></i> </a>
                                 </td>
                             </tr>
@@ -70,18 +68,21 @@
 @endsection
 
 
+
 <script>
     $(document).ready(function() {
-                $('#exampleModal').on('show.bs.modal', function(event) {
-                        var button = $()
-                    }
+        $('#exampleModal').on('show.bs.modal', function(event) = {
+            var button = $(event.relatedTarget);
+            var paramId = button.data('param-id');
+            var paramName = button.data('param-depart');
 
-                })
+
+            var modal = $(this);
+            modal.find('#editDeptId').val(paramId);
+            modal.find('#editDeptName').val(paramName);
+        });
+    });
 </script>
-
-
-
-
 
 
 <!-- Modal -->
@@ -90,18 +91,32 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Edit Help Value</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+            <form action="" method="POST" id="editDeptForm">
+                @csrf
+                @method('PUT')
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="" class="form-label">DepartMent Id:</label>
+                            <input type="text" name="parameter_id" id="editDeptId" class="form-control" disabled>
+                        </div>
+                        <div>
+                            <label for="editDeptName">Department Name:</label>
+                            <input type="text" name="department_name" id="editDeptName" class="form-control">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

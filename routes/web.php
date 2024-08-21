@@ -5,6 +5,7 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\MainDepartmentController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\SubDepartmentController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +38,11 @@ Route::resource('department', MainDepartmentController::class);
 Route::resource('subdept', SubDepartmentController::class);
 
 // Doctor refrence rout
+
+
+// Test route
+
+Route::resource('test', TestController::class);
 
 Route::get('/doc_ref_tab', [DoctorController::class,'doctable'])->name('doctor');
 Route::post('/adddoctore', [DoctorController::class,'adddoctor'])->name('adddoctor');

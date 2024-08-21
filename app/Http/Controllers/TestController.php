@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SubDepartment;
 use Illuminate\Http\Request;
 
 class TestController extends Controller
@@ -19,7 +20,9 @@ class TestController extends Controller
      */
     public function create()
     {
-        //
+        $sub=SubDepartment::with('subDep');
+        
+        return view('Test.addTest');
     }
 
     /**

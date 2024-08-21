@@ -165,7 +165,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/UI/ribbons.html" class="nav-link">
+                        <a href="{{route('test.create')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Add New Test</p>
                         </a>

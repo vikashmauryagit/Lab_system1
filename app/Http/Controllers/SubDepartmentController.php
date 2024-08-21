@@ -66,7 +66,8 @@ class SubDepartmentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // return $request;
+        $sub=SubDepartment::find($id);
     }
 
     /**
