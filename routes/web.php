@@ -47,4 +47,4 @@ Route::resource('test', TestController::class);
 Route::get('/doc_ref_tab', [DoctorController::class,'doctable'])->name('doctor');
 Route::post('/adddoctore', [DoctorController::class,'adddoctor'])->name('adddoctor');
 Route::get('/center_ref', [CenterController::class,'center'])->name('center');
-Route::get('/addcenter/{id}', [CenterController::class,'addcenter'])->name('addcenter');
+Route::Post('/addcenter', [CenterController::class,'addcenter'])->name('addcenter');

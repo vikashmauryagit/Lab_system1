@@ -111,7 +111,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="pages/UI/general.html" class="nav-link">
+                        <a href="{{ route('test.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Test Name</p>
                         </a>
@@ -123,13 +123,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('department.index')}}" class="nav-link">
+                        <a href="{{ route('department.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Show Main Department</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('subdept.index')}}" class="nav-link">
+                        <a href="{{ route('subdept.index') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Show Sub Department</p>
                         </a>
@@ -159,13 +159,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('subdept.create')}}" class="nav-link">
+                        <a href="{{ route('subdept.create') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Add Sub Department</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('test.create')}}" class="nav-link">
+                        <a href="{{ route('test.create') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Add New Test</p>
                         </a>

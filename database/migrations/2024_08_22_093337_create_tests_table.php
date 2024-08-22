@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('tests', function (Blueprint $table) {
             $table->id();
+            $table->string('test_name', 40);
+            $table->string('short_name', 40);
+            $table->string('tech_name', 40);
+            $table->string('test_price', 30);
+            $table->foreignId('sub_id')->references('id')->on('sub_departments')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('center_id')->references('id')->on('centers')->cascadeOnDelete()->cascadeOnUpdate();
+           
             $table->timestamps();
         });
     }

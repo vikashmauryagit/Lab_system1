@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Center;
 use App\Models\SubDepartment;
+use App\Models\Test;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TestController extends Controller
 {
@@ -12,7 +15,8 @@ class TestController extends Controller
      */
     public function index()
     {
-        //
+        $test = Test::all();
+        return view('Test.viewTest', compact('test'));
     }
 
     /**
@@ -20,9 +24,9 @@ class TestController extends Controller
      */
     public function create()
     {
-        $sub=SubDepartment::with('subDep');
-        
-        return view('Test.addTest');
+        $center = Center::all();
+        $sub = SubDepartment::all();
+        return view('Test.addTest', compact('center', 'sub'));
     }
 
     /**
@@ -30,7 +34,23 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'tname' => 'required',
+            'shortName' => 'required',
+            'technicalName' => 'required',
+            'testprice' => 'required',
+        ]);
+
+        $test = new Test();
+        $test->test_name = $request->tname;
+        $test->short_name = $request->shortName;
+        $test->tech_name = $request->technicalName;
+        $test->test_price = $request->testprice;
+        $test->center_id = $request->center_id;
+        $test->sub_id = $request->sub_dept_id;
+        $test->save();
+
+        return redirect()->route('test.index')->with('status', "Test Data Added Successfully...");
     }
 
     /**
@@ -38,7 +58,9 @@ class TestController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // $test1 = DB::table('tests')->find($id);
+        $data=Test::with('subDep')->with('center1')->find($id);
+        return view('Test.displayTest',compact('data'));
     }
 
     /**

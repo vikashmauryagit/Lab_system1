@@ -12,7 +12,7 @@
     </div>
     <div class="row">
         <div class="col-6">
-            <form action="{{ route('addcenter') }}" method="POST">
+            <form action="{{route('addcenter') }}"method="POST">
                 @csrf
                 <div class="col-8">
                     <div class="form-group">
