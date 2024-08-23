@@ -9,6 +9,11 @@ class SubDepartment extends Model
 {
     use HasFactory;
 
+    public function Tests()
+    {
+        return $this->hasMany(Test::class);
+    }
+
     public function dept()
     {
         return $this->belongsTo(Department::class);

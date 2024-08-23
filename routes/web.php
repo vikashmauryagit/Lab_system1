@@ -3,6 +3,7 @@
 use App\Http\Controllers\CenterController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\MainDepartmentController;
+use App\Http\Controllers\ParameterController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\SubDepartmentController;
 use App\Http\Controllers\TestController;
@@ -38,6 +39,10 @@ Route::resource('department', MainDepartmentController::class);
 Route::resource('subdept', SubDepartmentController::class);
 
 // Doctor refrence rout
+
+// Parameter Rout
+
+Route::resource('parameter', ParameterController::class);
 
 
 // Test route

@@ -84,6 +84,9 @@ class TestController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data=Test::find($id);
+        $data->delete();
+
+        return redirect()->route('test.index')->with("status1","Data Delete Successfull..");
     }
 }

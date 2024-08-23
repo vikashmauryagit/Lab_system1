@@ -11,11 +11,11 @@ class Test extends Model
 
     public function subDep()
     {
-        return $this->belongsTo(SubDepartment::class);
+        return $this->belongsTo(SubDepartment::class,'sub_id');
     }
     public function center1() {
       
-        return $this->belongsTo(Center::class);
+        return $this->belongsTo(Center::class,'center_id');
         
     }
 }

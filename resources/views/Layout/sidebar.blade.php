@@ -33,7 +33,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
-                        <a href="./index.html" class="nav-link active">
+                        <a href="{{route('patient.create')}}" class="nav-link active">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Patient Registration's</p>
                         </a>
@@ -171,7 +171,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/UI/ribbons.html" class="nav-link">
+                        <a href="{{route('parameter.create')}}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Add Test Parameter</p>
                         </a>
